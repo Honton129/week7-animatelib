@@ -1,4 +1,4 @@
-OpenFl Animate Atlas Player
+Flixel Animate Atlas Player
 ===========================
 
 Player for Adobe Animate Atlas export format based on the [Starling version][1].
