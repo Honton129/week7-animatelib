@@ -180,7 +180,7 @@ class AssetManager extends EventDispatcher
 	{
 		var data;
 		
-		if (Std.is(pData, ByteArrayData)) {
+		if (Std.isOfType(pData, ByteArrayData)) {
 			var entries:List<Entry> = Reader.readZip(new BytesInput(pData));
 			var bad:ByteArrayData = new ByteArrayData();
 			var entry:Entry = entries.first();
@@ -192,7 +192,7 @@ class AssetManager extends EventDispatcher
 				data = Json.parse(bad.toString());
 			} else data = Json.parse(entry.data.toString());
 		}
-		else if (Std.is(pData, String))  data = Json.parse(pData);
+		else if (Std.isOfType(pData, String))  data = Json.parse(pData);
 		else data=pData;
 
 		var assetReference : AssetReference = _queue[index];
@@ -240,7 +240,7 @@ class AssetManager extends EventDispatcher
 	public function addAsset(name : String, asset : Dynamic, type : String = null) : Void
 	{
 
-		if (type == null && Std.is(asset, AnimationAtlas))
+		if (type == null && Std.isOfType(asset, AnimationAtlas))
 		{
 			type = AnimationAtlas.ASSET_TYPE;
 		}
