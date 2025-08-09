@@ -198,7 +198,7 @@ class Symbol extends DisplayObjectContainer
 	
 	private static function getAnimation (pSymbol:DisplayObjectContainer) :Animation {
 		if (pSymbol == null) return null;
-		if (Std.is(pSymbol, Animation)) return cast(pSymbol, Animation);
+		if (Std.isOfType(pSymbol, Animation)) return cast(pSymbol, Animation);
 		else return getAnimation(pSymbol.parent);
 	}
 	

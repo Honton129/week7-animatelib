@@ -83,7 +83,7 @@ class Animation extends DisplayObjectContainer
     
     private function gotoFrame(indexOrLabel : Dynamic) : Void
     {
-        currentFrame = (Std.is(indexOrLabel, String)) ? 
+        currentFrame = (Std.isOfType(indexOrLabel, String)) ? 
         _symbol.getFrame(Std.string(indexOrLabel)) : Std.int(indexOrLabel);
     }
     
@@ -195,7 +195,7 @@ class Animation extends DisplayObjectContainer
 		
 		var child:DisplayObjectContainer;
 		for (i in 0...symbol.numChildren) {
-			if (!Std.is(symbol.getChildAt(i), DisplayObjectContainer)) continue;
+			if (!Std.isOfType(symbol.getChildAt(i), DisplayObjectContainer)) continue;
 			child = cast(symbol.getChildAt(i), DisplayObjectContainer);
 			if (child.name.indexOf(itemName)==0 && child.numChildren>0) cast(child.getChildAt(0), Symbol).setItem(item);
 			else setItem (itemName, cast(child,DisplayObjectContainer), item);

@@ -16,23 +16,23 @@ class AssetType
 
     public static function fromAsset(asset : Dynamic) : String
     {
-        if (Std.is(asset, BitmapData))
+        if (Std.isOfType(asset, BitmapData))
         {
             return TEXTURE;
         }
-        else if (Std.is(asset, TextureAtlas))
+        else if (Std.isOfType(asset, TextureAtlas))
         {
             return TEXTURE_ATLAS;
         }
-        else if (Std.is(asset, Sound))
+        else if (Std.isOfType(asset, Sound))
         {
             return SOUND;
         }
-        else if (Std.is(asset, ByteArrayData))
+        else if (Std.isOfType(asset, ByteArrayData))
         {
             return BYTE_ARRAY;
         }
-        else if (Std.is(asset, AssetManager))
+        else if (Std.isOfType(asset, AssetManager))
         {
             return ASSET_MANAGER;
         }
